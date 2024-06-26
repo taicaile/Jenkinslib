@@ -1,4 +1,4 @@
-@SharedLibrary('jenkinslib') _
+@Library('jenkinslib') _
 
 node {
     sh 'echo hello world'
