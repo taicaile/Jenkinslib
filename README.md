@@ -1,2 +1,3 @@
-# Jenkinslib
-The Jenkins lib for experiment.
+# README
+
+Test how to use the Jenkins Library.
