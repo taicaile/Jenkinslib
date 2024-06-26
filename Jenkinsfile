@@ -8,4 +8,6 @@ node {
 
     sh 'echo hello world'
     log.info "hello world"
+    log.warn "hello world"
+    log.error "hello world"
 }
