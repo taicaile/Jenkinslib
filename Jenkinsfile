@@ -2,7 +2,9 @@ def myLocalLib
 
 node {
     stage('Load Local Library') {
-        myLocalLib = load "myLocalLib.groovy"
+        dir("Jenkinslib"){
+            myLocalLib = load "myLocalLib.groovy"
+        }
     }
 
     stage('Use Local Library') {
