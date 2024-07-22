@@ -2,9 +2,9 @@ def myLocalLib
 
 node {
     stage('Load Local Library') {
-        bat "dir"
+        sh "ls -a"
         dir("Jenkinslib"){
-            bat "dir"
+            sh "ls -a"
             myLocalLib = load "myLocalLib.groovy"
         }
     }
