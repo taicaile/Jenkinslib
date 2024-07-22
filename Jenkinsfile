@@ -1,5 +1,14 @@
+def myLocalLib
 
 node {
+    stage('Load Local Library') {
+        myLocalLib = load "myLocalLib.groovy"
+    }
+
+    stage('Use Local Library') {
+        myLocalLib.myFunction()
+    }
+
     stage('Load Remote Lib'){
         checkout scm
         //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
