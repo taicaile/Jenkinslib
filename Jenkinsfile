@@ -1,4 +1,4 @@
-@Library('my-shared-library')
+library 'my-shared-library'
 
 node {
 
