@@ -8,10 +8,7 @@ node {
 
     stage('Load Local Library') {
         sh "ls -a"
-        dir("Jenkinslib"){
-            sh "ls -a"
-            myLocalLib = load "myLocalLib.groovy"
-        }
+        myLocalLib = load "myLocalLib.groovy"
     }
 
     stage('Use Local Library') {
