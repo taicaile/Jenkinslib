@@ -1,6 +1,11 @@
 def myLocalLib
 
 node {
+
+    stage('Checkout') {
+        checkout scm
+        }
+
     stage('Load Local Library') {
         sh "ls -a"
         dir("Jenkinslib"){
