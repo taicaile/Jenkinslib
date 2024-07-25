@@ -5,7 +5,6 @@ node {
     stage('Checkout') {
         checkout scm
         myLocalLib = load "myLocalLib.groovy"
-        log = load "log.groovy"
         }
 
     stage('Load Local Library') {
@@ -18,11 +17,11 @@ node {
 
     stage('Load Remote Lib'){
         // checkout scm
-        // //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
-        // repoPath = "https://github.com/tracetronic/jenkins-library.git"
-        // library identifier: 'jenkinslib@main',
-        //         retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
-        //         changelog: false
+        //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
+        repoPath = "."
+        library identifier: 'jenkinslib@main',
+                retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
+                changelog: true
 
         sh 'echo hello world'
         log.info "hello world"
