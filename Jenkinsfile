@@ -19,7 +19,7 @@ node {
     stage('Load Remote Lib'){
         // checkout scm
         //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
-        def repoPath = sh(returnStdout: true, script: 'pwd').trim() + "/$libraryPath"
+        def repoPath = sh(returnStdout: true, script: 'pwd').trim()
 
         library identifier: 'local-lib@main',
                 retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
