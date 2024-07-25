@@ -1,5 +1,5 @@
 def myLocalLib
-
+def log
 node {
 
     stage('Checkout') {
