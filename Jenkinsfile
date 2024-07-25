@@ -18,7 +18,7 @@ node {
     stage('Load Remote Lib'){
         // checkout scm
         //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
-        repoPath = "."
+        repoPath = "file:."
         library identifier: 'jenkinslib@main',
                 retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
                 changelog: true
