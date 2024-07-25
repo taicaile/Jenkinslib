@@ -20,7 +20,7 @@ node {
         // checkout scm
         //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
         def repoPath = sh(returnStdout: true, script: 'pwd').trim()
-
+        echo "${repoPath}"
         library identifier: 'local-lib@main',
                 retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
                 changelog: false
