@@ -1,8 +1,6 @@
 def myLocalLib
 def log
 
-@Library('jenkinslib') _
-
 node {
 
     stage('Checkout') {
