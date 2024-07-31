@@ -1,4 +1,5 @@
 def myLocalLib
+def repoPath = "https://github.com/taicaile/Jenkinslib.git"
 
 library identifier: 'locallib@main',
         retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
@@ -22,7 +23,7 @@ node {
     stage('Load Remote Lib'){
         // checkout scm
         // def repoPath = sh(returnStdout: true, script: 'pwd').trim()
-        def repoPath = "https://github.com/taicaile/Jenkinslib.git"
+
         echo "${repoPath}"
 
 
