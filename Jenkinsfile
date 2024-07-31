@@ -3,17 +3,16 @@ def repoPath = "https://github.com/taicaile/Jenkinslib.git"
 
 library identifier: 'locallib@main',
         retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
-        changelog: false
+        changelog: true
 
 node {
-
     stage('Checkout') {
         checkout scm
         myLocalLib = load "myLocalLib.groovy"
         }
 
     stage('Load Local Library') {
-        sh "ls -a"
+        cmd "ls -a"
     }
 
     stage('Use Local Library') {
@@ -27,9 +26,9 @@ node {
         echo "${repoPath}"
 
 
-        sh 'echo hello world'
-        log.info "hello world"
-        log.warn "hello world"
-        log.error "hello world"
+        cmd 'echo hello world'
+        logger.info "hello world"
+        logger.warn "hello world"
+        logger.error "hello world"
     }
 }
