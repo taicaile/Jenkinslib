@@ -1,5 +1,4 @@
 def myLocalLib
-def log
 
 node {
 
