@@ -13,7 +13,7 @@
 def call(String cmd) {
     String result
     if (isUnix()) {
-        result = sh script: cmd, returnStdout: true
+        result = sh script: "${cmd}", returnStdout: true
     } else {
         result = bat script: "@echo off\r\n${cmd}", returnStdout: true
     }
