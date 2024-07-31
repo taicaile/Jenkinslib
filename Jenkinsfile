@@ -18,8 +18,8 @@ node {
 
     stage('Load Remote Lib'){
         // checkout scm
-        //   library identifier: "syndesis-pipeline-library@${env.BRANCH_NAME}", retriever: workspaceRetriever("${WORKSPACE}")
-        def repoPath = sh(returnStdout: true, script: 'pwd').trim()
+        // def repoPath = sh(returnStdout: true, script: 'pwd').trim()
+        def repoPath = "https://github.com/taicaile/Jenkinslib.git"
         echo "${repoPath}"
         library identifier: 'locallib@main',
                 retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
