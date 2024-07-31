@@ -12,12 +12,12 @@ node {
         }
 
     stage('Use Local Library') {
-        cmd "ls -a"
+        echo cmd "ls -a"
         myLocalLib.myFunction()
     }
 
     stage('Test Library'){
-        cmd "echo hello world"
+        echo cmd "echo hello world"
         logger.info "hello world"
         logger.warn "hello world"
         logger.error "hello world"
