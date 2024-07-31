@@ -13,6 +13,7 @@
 def call(String cmd) {
     String result
     if (isUnix()) {
+        logger.debug("received cmd: ${cmd}")
         result = sh script: "${cmd}", returnStdout: true
     } else {
         result = bat script: "@echo off\r\n${cmd}", returnStdout: true
