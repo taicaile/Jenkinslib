@@ -38,7 +38,7 @@ def toConsole(String message, String color = 'black', String style = 'normal', S
  *      the informative log message
  */
 def info(String logMessage) {
-    toConsole(logMessage, 'cyan', 'normal', '[TT] INFO: ')
+    toConsole(logMessage, 'cyan', 'normal', '[INFO]: ')
 }
 
 /**
@@ -51,7 +51,7 @@ def info(String logMessage) {
  */
 def debug(String debugMessage) {
     if (env.LOG_DEBUG == 'true') {
-        toConsole(debugMessage, 'blue', 'normal', '[TT] DEBUG: ')
+        toConsole(debugMessage, 'blue', 'normal', '[DEBUG]: ')
     }
 }
 
@@ -62,7 +62,7 @@ def debug(String debugMessage) {
  *      the error log message
  */
 def error(String errorMessage) {
-    toConsole(errorMessage, 'red', 'normal', '[TT] ERROR: ')
+    toConsole(errorMessage, 'red', 'normal', '[ERROR]: ')
 }
 
 /**
@@ -72,7 +72,7 @@ def error(String errorMessage) {
  *      the warning log message
  */
 def warn(String warnMessage) {
-    toConsole(warnMessage, 'yellow', 'normal', '[TT] WARN: ')
+    toConsole(warnMessage, 'yellow', 'normal', '[WARN]: ')
 }
 
 /**
