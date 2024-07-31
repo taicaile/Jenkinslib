@@ -11,22 +11,13 @@ node {
         myLocalLib = load "myLocalLib.groovy"
         }
 
-    stage('Load Local Library') {
-        cmd "ls -a"
-    }
-
     stage('Use Local Library') {
+        cmd("ls -a")
         myLocalLib.myFunction()
     }
 
-    stage('Load Remote Lib'){
-        // checkout scm
-        // def repoPath = sh(returnStdout: true, script: 'pwd').trim()
-
-        echo "${repoPath}"
-
-
-        cmd 'echo hello world'
+    stage('Test Library'){
+        cmd("echo hello world")
         logger.info "hello world"
         logger.warn "hello world"
         logger.error "hello world"
