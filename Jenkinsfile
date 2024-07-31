@@ -1,5 +1,9 @@
 def myLocalLib
 
+library identifier: 'locallib@main',
+        retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
+        changelog: false
+
 node {
 
     stage('Checkout') {
@@ -20,9 +24,7 @@ node {
         // def repoPath = sh(returnStdout: true, script: 'pwd').trim()
         def repoPath = "https://github.com/taicaile/Jenkinslib.git"
         echo "${repoPath}"
-        library identifier: 'locallib@main',
-                retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
-                changelog: false
+
 
         sh 'echo hello world'
         log.info "hello world"
