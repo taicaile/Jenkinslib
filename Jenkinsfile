@@ -7,7 +7,7 @@ library identifier: 'locallib@main',
 // import io.lib.Build
 
 def myLocalLib
-def myUtils = new org.demo.buildUtils()
+def myUtils = new library("locallib").org.demo.buildUtils()
 
 
 node {
