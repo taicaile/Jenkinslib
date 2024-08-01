@@ -23,13 +23,12 @@ node {
     stage('Test Library') {
         def result = cmd 'echo hello world'
         echo result
-        logger.info 'hello world'
-        logger.warn 'hello world'
-        logger.error 'hello world'
+        logger.debug("Hello World")
+        logger.info "Hello World"
+        logger.warn "Hello World"
+        logger.error "Hello World"
 
         mylib.lib.Build.new().build(command = 'dir')
         iolib.Build.new().build(command = 'ls -a')
-        def build = new iolib.Build()
-        build.build("dir")
     }
 }
