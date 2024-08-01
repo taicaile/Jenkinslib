@@ -1,10 +1,12 @@
 
+def repoPath = "https://github.com/taicaile/Jenkinslib.git"
 library identifier: 'locallib@main',
         retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
         changelog: true
 
+import io.lib.Build
+
 def myLocalLib
-def repoPath = "https://github.com/taicaile/Jenkinslib.git"
 
 
 node {
@@ -26,7 +28,6 @@ node {
         logger.warn "hello world"
         logger.error "hello world"
 
-        import io.lib.Build
         def build = new Build()
         build.("dir")
 
