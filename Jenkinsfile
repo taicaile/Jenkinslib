@@ -36,8 +36,7 @@ node {
         println mylib.io.lib.Build
 
         mylib.io.lib.Build.new().build(command="dir")
-        mylib.io.lib.Build.new().build("dir")
-        mylib.io.lib.Build.build("dir")
+        mylib.io.lib.Build.build(command="dir")
 
         // mylib.io.lib.Build.build("dir")
     }
