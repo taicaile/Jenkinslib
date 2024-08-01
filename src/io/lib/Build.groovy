@@ -21,3 +21,5 @@ def build(String command, String directory = null){
         throw e
     }
 }
+
+return this
