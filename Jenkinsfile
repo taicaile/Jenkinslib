@@ -1,4 +1,4 @@
-import io.lib
+import io.lib.Build
 
 def myLocalLib
 def repoPath = "https://github.com/taicaile/Jenkinslib.git"
@@ -26,7 +26,7 @@ node {
         logger.warn "hello world"
         logger.error "hello world"
 
-        def build = new io.lib.Build()
+        def build = new Build()
         build.("dir")
 
     }
