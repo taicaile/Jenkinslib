@@ -30,7 +30,13 @@ node {
 
         // def build = new Build()
         // build.("dir")
-        mylib.io.lib.Build.build("dir")
+        println mylib
+        println mylib.io
+        println mylib.io.lib
+        println mylib.io.lib.Build
+        println mylib.io.lib.Build.build
+
+        // mylib.io.lib.Build.build("dir")
 
     }
 }
