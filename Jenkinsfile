@@ -1,13 +1,13 @@
 
 def repoPath = "https://github.com/taicaile/Jenkinslib.git"
-library identifier: 'locallib@main',
-        retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
-        changelog: true
+def mylib = library identifier: 'locallib@main',
+            retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
+            changelog: true
 
 // import io.lib.Build
 
 def myLocalLib
-def myUtils = new library("locallib").org.demo.buildUtils()
+def myUtils = new mylib.org.demo.buildUtils()
 
 
 node {
