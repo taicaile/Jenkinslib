@@ -4,8 +4,7 @@ def mylib = library(identifier: 'locallib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
             changelog: true)
 
-// import io.lib.Build
-println mylib
+def iolib = mylib.io.lib
 
 def myLocalLib
 
@@ -36,7 +35,7 @@ node {
         println mylib.io.lib.Build
 
         mylib.io.lib.Build.new().build(command="dir")
-
+        iolib.Build.new().build(command="ls -a")
         // mylib.io.lib.Build.build("dir")
     }
 }
