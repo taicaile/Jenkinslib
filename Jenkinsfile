@@ -4,7 +4,7 @@ def mylib = library(identifier: 'locallib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
             changelog: true)
 
-def iolib = mylib.io.lib
+def iolib = mylib.lib
 
 def myLocalLib
 
