@@ -1,3 +1,5 @@
+import io.lib
+
 def myLocalLib
 def repoPath = "https://github.com/taicaile/Jenkinslib.git"
 
