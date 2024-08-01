@@ -9,8 +9,6 @@ println mylib
 
 def myLocalLib
 
-println myUtils
-
 node {
     stage('Checkout') {
         checkout scm
