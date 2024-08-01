@@ -1,11 +1,9 @@
-
-def repoPath = 'https://github.com/taicaile/Jenkinslib.git'
+String repoPath = 'https://github.com/taicaile/Jenkinslib.git'
 def mylib = library(identifier: 'locallib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
             changelog: true)
 
 def iolib = mylib.lib
-
 def myLocalLib
 
 node {
@@ -15,20 +13,20 @@ node {
     }
 
     stage('Use Local Library') {
-        def result = cmd 'ls -a'
+        String result = cmd 'ls -a'
         echo result
         myLocalLib.myFunction()
     }
 
     stage('Test Library') {
-        def result = cmd 'echo hello world'
+        String result = cmd 'echo hello world'
         echo result
-        logger.debug("Hello World")
-        logger.info "Hello World"
-        logger.warn "Hello World"
-        logger.error "Hello World"
+        logger.debug('This is a debug message.')
+        logger.info 'This is a info message.'
+        logger.warn 'This is a warn message.'
+        logger.error 'This is a error message.'
 
         mylib.lib.Build.new().run(command = 'dir')
-        iolib.Build.new().run(command = 'ls -a')
+        iolib.Build.new().run(command = 'ls')
     }
 }
