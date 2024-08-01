@@ -34,9 +34,9 @@ node {
         println mylib.io
         println mylib.io.lib
         println mylib.io.lib.Build
-        mylib.io.lib.Build.new().build("testdir")
+
+        mylib.io.lib.Build.new().build(command="testdir")
 
         // mylib.io.lib.Build.build("dir")
-
     }
 }
