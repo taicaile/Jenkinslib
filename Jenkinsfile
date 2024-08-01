@@ -7,8 +7,8 @@ def mylib = library identifier: 'locallib@main',
 // import io.lib.Build
 
 def myLocalLib
-def myUtils = new mylib.org.demo.buildUtils()
-
+// def myUtils = new mylib.org.demo.buildUtils()
+println mylib
 
 node {
     stage('Checkout') {
