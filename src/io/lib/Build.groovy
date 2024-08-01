@@ -1,4 +1,3 @@
-
 package io.lib
 
 def build(String command, String directory = null){
@@ -21,5 +20,3 @@ def build(String command, String directory = null){
         throw e
     }
 }
-
-return this

@@ -4,9 +4,10 @@ library identifier: 'locallib@main',
         retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
         changelog: true
 
-import io.lib.Build
+// import io.lib.Build
 
 def myLocalLib
+def myUtils = new org.demo.buildUtils()
 
 
 node {
@@ -28,8 +29,8 @@ node {
         logger.warn "hello world"
         logger.error "hello world"
 
-        def build = new Build()
-        build.("dir")
+        // def build = new Build()
+        // build.("dir")
 
     }
 }
