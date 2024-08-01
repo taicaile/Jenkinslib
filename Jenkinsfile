@@ -26,7 +26,7 @@ node {
         logger.warn "hello world"
         logger.error "hello world"
 
-        def build = new Build()
+        def build = new io.lib.Build()
         build.("dir")
 
     }
