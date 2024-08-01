@@ -1,5 +1,5 @@
 
-package lib.io
+package io.lib
 
 def build(String command, String directory = null){
 
