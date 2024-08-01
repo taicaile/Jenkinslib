@@ -29,7 +29,7 @@ node {
 
         mylib.lib.Build.new().build(command = 'dir')
         iolib.Build.new().build(command = 'ls -a')
-        def build = new oplib.Build()
+        def build = new iolib.Build()
         build.build("dir")
     }
 }
