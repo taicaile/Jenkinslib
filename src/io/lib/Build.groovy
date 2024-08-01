@@ -2,7 +2,7 @@ package io.lib
 
 def build(String command, String directory = null){
 
-    log.debug 'command: ' + command + ";" + 'directory: ' + directory
+    logger.debug 'command: ' + command + ";" + 'directory: ' + directory
     def results
     try {
         if(directory){
@@ -11,7 +11,7 @@ def build(String command, String directory = null){
             }
         }
         else{
-            log.debug("Directory: ${directory} is not set.")
+            logger.debug("Directory: ${directory} is not set.")
             results = cmd command
         }
         logger.info(results)
