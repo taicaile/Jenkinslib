@@ -1,19 +1,21 @@
 
 package lib.io
 
-def build(String command, String directory){
+def build(String command, String directory = null){
 
     log.debug 'command: ' + command + ";" + 'directory: ' + directory
-
+    def results
     try {
         if(directory){
             dir(directory){
-                cmd command
+                results = cmd command
             }
         }
         else{
-            log.debug("Directory: ${directory} is not found.")
+            log.debug("Directory: ${directory} is not set.")
+            results = cmd command
         }
+        logger.info(results)
     }
     catch (e) {
         throw e

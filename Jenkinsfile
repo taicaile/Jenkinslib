@@ -23,5 +23,9 @@ node {
         logger.info "hello world"
         logger.warn "hello world"
         logger.error "hello world"
+
+        def build = new Build()
+        build.("dir")
+
     }
 }
