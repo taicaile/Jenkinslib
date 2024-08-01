@@ -8,7 +8,7 @@ def mylib = library(identifier: 'locallib@main',
 println mylib
 
 def myLocalLib
-def myUtils = mylib.org.demo.buildUtils()
+
 println myUtils
 
 node {
@@ -32,6 +32,7 @@ node {
 
         // def build = new Build()
         // build.("dir")
+        mylib.io.lib.Build.build("dir")
 
     }
 }
