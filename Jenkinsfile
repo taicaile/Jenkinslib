@@ -28,7 +28,7 @@ node {
         logger.warn "Hello World"
         logger.error "Hello World"
 
-        mylib.lib.Build.new().build(command = 'dir')
-        iolib.Build.new().build(command = 'ls -a')
+        mylib.lib.Build.new().run(command = 'dir')
+        iolib.Build.new().run(command = 'ls -a')
     }
 }

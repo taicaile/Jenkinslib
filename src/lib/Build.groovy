@@ -5,7 +5,7 @@ def run(String command, String directory = null) {
     String results
     try {
         if (directory != null) {
-            if(fileExists(directory)){
+            if (fileExists(directory)) {
                 dir(directory) {
                     results = cmd(command)
                 }
