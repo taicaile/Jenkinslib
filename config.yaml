@@ -1,4 +1,3 @@
-BuildStage:
-  - name: BuildStage
-  - BuildCommand: "build"
-  - BuildDirectory:
+- name: BuildStage
+  BuildCommand: "build"
+  BuildDirectory:
