@@ -19,8 +19,10 @@ node {
         // echo myLocalLib.readYamlFile('config.yaml')
 
         def config = readYaml(file: 'config.yaml')
-        logger.info(config)
-        echo config
+        echo 'Config keys:'
+        config.keySet().each { key ->
+            echo "- $key"
+        }
     }
 
     stage('Test Library') {
