@@ -21,8 +21,8 @@ node {
         def config = readYaml(file: 'config.yaml')
         echo config.toString()
         echo 'Config keys:'
-        config.keySet().each { key ->
-            echo "- $key"
+        config.each { key ->
+            echo "- $key, type: " + key.getClass().getName()
         }
     }
 
