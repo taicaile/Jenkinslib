@@ -16,6 +16,7 @@ node {
         String result = cmd 'ls -a'
         echo result
         myLocalLib.myFunction()
+        echo myLocalLib.readYamlFile('config.yaml')
     }
 
     stage('Test Library') {
