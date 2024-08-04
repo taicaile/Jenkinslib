@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2021 - 2023 tracetronic GmbH
- *
- * SPDX-License-Identifier: MIT
- */
-
 /**
  * Executes a passed command on Linux Shell or Windows Batch depending on the node.
  *

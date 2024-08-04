@@ -1,9 +1,4 @@
-/*
- * Copyright (c) 2021 - 2023 tracetronic GmbH
- *
- * SPDX-License-Identifier: MIT
- */
-
+/* groovylint-disable DuplicateStringLiteral, GetterMethodCouldBeProperty, StaticMethodsBeforeInstanceMethods */
 /**
  * Prints a formatted logging message to console output.
  *
@@ -26,7 +21,7 @@ def toConsole(String message, String color = 'black', String style = 'normal', S
     def colorCode = getColorCode(color)
     def styleCode = getStyleCode(style)
     def resetCode = getStyleCode('reset')
-    ansiColor('tt') {
+    ansiColor('xterm') {
         echo "${escapeCode}${styleCode}${escapeCode}${colorCode}${prefix}${message}${escapeCode}${resetCode}"
     }
 }
@@ -143,6 +138,6 @@ def getStyleCode(String style) {
 /**
  * Returns the ANSI escape sequence code.
  */
-def static getEscapeCode() {
+static getEscapeCode() {
     return '\u001B['
 }
