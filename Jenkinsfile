@@ -16,7 +16,11 @@ node {
         String result = cmd 'ls -a'
         echo result
         myLocalLib.myFunction()
-        echo myLocalLib.readYamlFile('config.yaml')
+        // echo myLocalLib.readYamlFile('config.yaml')
+
+        def config = readYaml(file: 'config.yaml')
+        logger.info(config)
+        echo config
     }
 
     stage('Test Library') {
