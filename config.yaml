@@ -1,3 +1,4 @@
 - name: BuildStage
+  type: bat
   BuildCommand: "build"
   BuildDirectory:
