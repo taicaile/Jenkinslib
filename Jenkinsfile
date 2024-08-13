@@ -12,7 +12,7 @@ def myLocalLib
 
 node {
     stage('CheckEnv') {
-        bat 'set'
+        sh 'env'
     }
 
     stage('Checkout') {
