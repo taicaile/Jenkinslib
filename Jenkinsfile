@@ -1,3 +1,6 @@
+properties([disableConcurrentBuilds(),
+            parameters([string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true)])
+        ])
 
 String libraryRepoURL = 'https://github.com/taicaile/Jenkinslib.git'
 def mylib = library(identifier: 'locallib@main',
