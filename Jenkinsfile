@@ -1,9 +1,10 @@
-String repoPath = 'https://github.com/taicaile/Jenkinslib.git'
+
+String libraryRepoURL = 'https://github.com/taicaile/Jenkinslib.git'
 def mylib = library(identifier: 'locallib@main',
-            retriever: modernSCM([$class: 'GitSCMSource', remote: "$repoPath"]),
+            retriever: modernSCM([$class: 'GitSCMSource', remote: "$libraryRepoURL"]),
             changelog: true)
 
-def iolib = mylib.lib
+def locallib = mylib.lib
 def myLocalLib
 
 node {
@@ -35,6 +36,6 @@ node {
         logger.error 'This is a error message.'
 
         mylib.lib.Build.new().run(command = 'dir')
-        iolib.Build.new().run(command = 'ls')
+        locallib.Build.new().run(command = 'ls')
     }
 }
