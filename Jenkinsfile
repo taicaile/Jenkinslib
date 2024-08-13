@@ -11,6 +11,10 @@ def locallib = mylib.lib
 def myLocalLib
 
 node {
+    stage('CheckEnv') {
+        bat 'set'
+    }
+
     stage('Checkout') {
         checkout scm
         myLocalLib = load 'myLocalLib.groovy'
