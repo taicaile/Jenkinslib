@@ -1,5 +1,8 @@
 properties([disableConcurrentBuilds(),
-            parameters([string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true)])
+            parameters([
+                string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true)
+
+            ])
         ])
 
 String libraryRepoURL = 'https://github.com/taicaile/Jenkinslib.git'
@@ -42,7 +45,7 @@ node {
         logger.warn 'This is a warn message.'
         logger.error 'This is a error message.'
 
-        mylib.lib.Build.new().run(command = 'dir')
+        mylib.core.Build.new().run(command = 'dir')
         locallib.Build.new().run(command = 'ls')
     }
 }
