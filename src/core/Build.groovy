@@ -1,4 +1,4 @@
-package lib
+package core
 
 def run(String command, String directory = null) {
     logger.debug 'command: ' + command + ';' + 'directory: ' + directory
@@ -17,8 +17,8 @@ def run(String command, String directory = null) {
         }
         logger.info(results)
     }
-    catch (e) {
-        logger.error(e)
-        throw e
+    catch (err) {
+        logger.error(err)
+        throw err
     }
 }

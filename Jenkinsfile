@@ -3,11 +3,11 @@ properties([disableConcurrentBuilds(),
         ])
 
 String libraryRepoURL = 'https://github.com/taicaile/Jenkinslib.git'
-def mylib = library(identifier: 'locallib@main',
+def mylib = library(identifier: 'mylib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$libraryRepoURL"]),
             changelog: true)
 
-def locallib = mylib.lib
+// def locallib = mylib.core
 def myLocalLib
 
 node {
