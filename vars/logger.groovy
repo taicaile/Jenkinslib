@@ -45,7 +45,7 @@ def info(String logMessage) {
  *      the debug log message
  */
 def debug(String debugMessage) {
-    if (env.LOG_DEBUG == 'true') {
+    if (env.LOGGER_DEBUG == 'true') {
         toConsole(debugMessage, 'blue', 'normal', '[DEBUG]: ')
     }
 }

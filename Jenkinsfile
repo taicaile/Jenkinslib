@@ -1,7 +1,7 @@
 properties([disableConcurrentBuilds(),
             parameters([
-                string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true)
-
+                string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true),
+                booleanParam(name: 'LOGGER_DEBUG', defaultValue: false, description: 'Print debug message')
             ])
         ])
 
