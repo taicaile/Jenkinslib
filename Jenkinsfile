@@ -10,7 +10,7 @@ def mylib = library(identifier: 'mylib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$libraryRepoURL"]),
             changelog: true)
 
-// def locallib = mylib.core
+def locallib = mylib.core
 def myLocalLib
 
 node {
