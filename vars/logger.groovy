@@ -16,7 +16,7 @@
  * @param prefix
  *      the prefix message (defaults to empty string)
  */
-def toConsole(String message, String color = 'black', String style = 'normal', String prefix = '') {
+def toConsole(message, String color = 'black', String style = 'normal', String prefix = '') {
     def escapeCode = getEscapeCode()
     def colorCode = getColorCode(color)
     def styleCode = getStyleCode(style)
@@ -32,7 +32,7 @@ def toConsole(String message, String color = 'black', String style = 'normal', S
  * @param logMessage
  *      the informative log message
  */
-def info(String logMessage) {
+def info(logMessage) {
     toConsole(logMessage, 'cyan', 'normal', '[INFO]: ')
 }
 
