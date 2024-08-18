@@ -16,6 +16,8 @@ def myLocalLib
 node {
     stage('CheckEnv') {
         sh 'env'
+        logger.info(mylib)
+        logger.info(locallib)
     }
 
     stage('Checkout') {

@@ -22,7 +22,7 @@ def toConsole(String message, String color = 'black', String style = 'normal', S
     def styleCode = getStyleCode(style)
     def resetCode = getStyleCode('reset')
     ansiColor('xterm') {
-        echo "${escapeCode}${styleCode}${escapeCode}${colorCode}${prefix}${message}${escapeCode}${resetCode}"
+        println "${escapeCode}${styleCode}${escapeCode}${colorCode}${prefix}${message}${escapeCode}${resetCode}"
     }
 }
 
