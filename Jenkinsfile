@@ -1,7 +1,7 @@
 
 properties([disableConcurrentBuilds(),
             parameters([
-                string(name: 'PROJECT_GOOGLE_CHAT_WEBHOOK_URL', trim: true, description: :"Google Chat notification webhook url."),
+                string(name: 'PROJECT_GOOGLE_CHAT_WEBHOOK_URL', trim: true, description: 'Google Chat notification webhook url.'),
                 booleanParam(name: 'PIPELINE_LOGGER_DEBUG_MODE', defaultValue: false, description: 'Print debug message')
             ])
         ])
