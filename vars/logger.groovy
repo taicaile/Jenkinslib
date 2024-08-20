@@ -16,7 +16,7 @@
  * @param prefix
  *      the prefix message (defaults to empty string)
  */
-def toConsole(message, String color = 'black', String style = 'normal', String prefix = '') {
+def toConsole(Object message, String color = 'black', String style = 'normal', String prefix = '') {
     def escapeCode = getEscapeCode()
     def colorCode = getColorCode(color)
     def styleCode = getStyleCode(style)
@@ -32,7 +32,7 @@ def toConsole(message, String color = 'black', String style = 'normal', String p
  * @param logMessage
  *      the informative log message
  */
-def info(logMessage) {
+def info(Object logMessage) {
     toConsole(logMessage, 'cyan', 'normal', '[INFO]: ')
 }
 
@@ -44,7 +44,7 @@ def info(logMessage) {
  * @param debugMessage
  *      the debug log message
  */
-def debug(String debugMessage) {
+def debug(Object debugMessage) {
     if (env.LOGGER_DEBUG == 'true') {
         toConsole(debugMessage, 'blue', 'normal', '[DEBUG]: ')
     }
@@ -56,7 +56,7 @@ def debug(String debugMessage) {
  * @param errorMessage
  *      the error log message
  */
-def error(String errorMessage) {
+def error(Object errorMessage) {
     toConsole(errorMessage, 'red', 'normal', '[ERROR]: ')
 }
 
@@ -66,7 +66,7 @@ def error(String errorMessage) {
  * @param warnMessage
  *      the warning log message
  */
-def warn(String warnMessage) {
+def warn(Object warnMessage) {
     toConsole(warnMessage, 'yellow', 'normal', '[WARN]: ')
 }
 
