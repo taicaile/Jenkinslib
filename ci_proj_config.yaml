@@ -1,5 +1,9 @@
-- name: BuildStage
-  type: bat
-  BuildCommand: "build"
-  BuildDirectory:
-  buildWithKW: false
+config:
+  ProjectName: ProjectNameExample
+
+steps:
+  - StepName: BuildStage
+    BuildCommand: "build"
+    BuildCommandType: bat
+    BuildDirectory:
+    buildWithKW: false

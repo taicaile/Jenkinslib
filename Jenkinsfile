@@ -48,7 +48,7 @@ node {
         logger.warn 'This is a warn message.'
         logger.error 'This is a error message.'
 
-        corelib.Build.new().run(command = 'dir')
+        mylib.core.Build.new().run(command = 'dir')
         corelib.Build.new().run(command = 'ls')
     }
 }
