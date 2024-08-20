@@ -49,6 +49,6 @@ node {
         logger.error 'This is a error message.'
 
         corelib.Build.new().run(command = 'dir')
-        locallib.Build.new().run(command = 'ls')
+        corelib.Build.new().run(command = 'ls')
     }
 }
