@@ -2,3 +2,4 @@
   type: bat
   BuildCommand: "build"
   BuildDirectory:
+  buildWithKW: false
