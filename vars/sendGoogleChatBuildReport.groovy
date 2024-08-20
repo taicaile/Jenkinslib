@@ -2,21 +2,23 @@
 
 import static groovy.json.JsonOutput.toJson
 
-void call(final Map<String, String> buildProperties = [:], final String url = env.GOOGLE_CHAT_WEBHOOK) {
-    final Map<String, String> RESULT_IMGS = [
+void call(final Map<String, String> buildProperties = [:], final String url = env.PROJECT_GOOGLE_CHAT_WEBHOOK_URL) {
+    final Map<String, String> resultImgs = [
         SUCCESS: 'https://jenkins.io/doc/book/resources/blueocean/dashboard/status-passed.png',
         UNSTABLE: 'https://jenkins.io/doc/book/resources/blueocean/dashboard/status-unstable.png',
         FAILURE: 'https://jenkins.io/doc/book/resources/blueocean/dashboard/status-failed.png',
         NOT_BUILT: 'https://jenkins.io/doc/book/resources/blueocean/dashboard/status-in-progress.png',
         ABORTED: 'https://jenkins.io/doc/book/resources/blueocean/dashboard/status-aborted.png'
     ]
-    final Map<String, String> RESULT_TEXT = [
+    final Map<String, String> resultTexts = [
         SUCCESS: 'succeeded',
         UNSTABLE: 'is unstable',
         FAILURE: 'failed',
         NOT_BUILT: 'is in progress',
         ABORTED: 'is aborted'
     ]
+    final String trueString = 'true'
+
     if (currentBuild.hasProperty('buildCauses')) {
         buildProperties.'Cause' =  "${currentBuild.'buildCauses'?.shortDescription?.join(', ')}"
     }
@@ -24,7 +26,7 @@ void call(final Map<String, String> buildProperties = [:], final String url = en
     final Map<String, String> actions = [
         'BUILD': env.BUILD_URL,
         'CONSOLE': "${env.BUILD_URL}console",
-        'TESTS': "${env.BUILD_URL}testReport"
+        // 'TESTS': "${env.BUILD_URL}testReport"
     ]
 
     final Map<String, Object> complexMessage = [
@@ -32,8 +34,8 @@ void call(final Map<String, String> buildProperties = [:], final String url = en
             [
                 header: [
                     title: "${env.JOB_NAME}",
-                    subtitle: "#${env.BUILD_NUMBER} ${RESULT_TEXT[currentBuild.currentResult]}",
-                    imageUrl: RESULT_IMGS[currentBuild.currentResult] ?: RESULT_IMGS['NOT_BUILT'],
+                    subtitle: "#${env.BUILD_NUMBER} ${resultTexts[currentBuild.currentResult]}",
+                    imageUrl: resultImgs[currentBuild.currentResult] ?: resultImgs['NOT_BUILT'],
                     imageStyle: 'AVATAR'
                 ],
                 sections: []
@@ -56,7 +58,7 @@ void call(final Map<String, String> buildProperties = [:], final String url = en
         complexMessage.cards[0].sections << [
             header: 'Properties',
             widgets: buildProperties.collect { key, value ->
-                [keyValue: [topLabel: "${key}", content: "${value}", contentMultiline: 'true']]
+                [keyValue: [topLabel: "${key}", content: "${value}", contentMultiline: trueString]]
             }
         ]
     }
@@ -70,7 +72,7 @@ void call(final Map<String, String> buildProperties = [:], final String url = en
                         topLabel: "${new Date(log.timestamp).toLocaleString()}",
                         content: "${log.msg}",
                         bottomLabel: "${log.author.displayName}",
-                        contentMultiline: 'true']
+                        contentMultiline: trueString]
                 ]
             }
         ]

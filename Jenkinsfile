@@ -1,7 +1,8 @@
+
 properties([disableConcurrentBuilds(),
             parameters([
-                string(name: 'GOOGLE_CHAT_WEBDHOOK', trim: true),
-                booleanParam(name: 'LOGGER_DEBUG', defaultValue: false, description: 'Print debug message')
+                string(name: 'PROJECT_GOOGLE_CHAT_WEBHOOK_URL', trim: true, description: :"Google Chat notification webhook url."),
+                booleanParam(name: 'PIPELINE_LOGGER_DEBUG_MODE', defaultValue: false, description: 'Print debug message')
             ])
         ])
 
@@ -10,14 +11,14 @@ def mylib = library(identifier: 'mylib@main',
             retriever: modernSCM([$class: 'GitSCMSource', remote: "$libraryRepoURL"]),
             changelog: true)
 
-def locallib = mylib.core
+def corelib = mylib.core
 def myLocalLib
 
 node {
     stage('CheckEnv') {
         sh 'env'
         logger.info(mylib)
-        logger.info(locallib)
+        logger.info(corelib)
     }
 
     stage('Checkout') {
@@ -47,7 +48,7 @@ node {
         logger.warn 'This is a warn message.'
         logger.error 'This is a error message.'
 
-        mylib.core.Build.new().run(command = 'dir')
+        corelib.Build.new().run(command = 'dir')
         locallib.Build.new().run(command = 'ls')
     }
 }

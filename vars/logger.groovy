@@ -45,7 +45,7 @@ def info(Object logMessage) {
  *      the debug log message
  */
 def debug(Object debugMessage) {
-    if (env.LOGGER_DEBUG == 'true') {
+    if (env.PIPELINE_LOGGER_DEBUG_MODE == 'true' || params.PIPELINE_LOGGER_DEBUG_MODE) {
         toConsole(debugMessage, 'blue', 'normal', '[DEBUG]: ')
     }
 }

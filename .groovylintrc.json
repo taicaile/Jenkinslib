@@ -4,10 +4,19 @@
         "CompileStatic": {
             "enabled": false
         },
+        "DuplicateNumberLiteral": {
+            "enabled": false
+        },
         "JavadocMissingParamDescription": {
             "enabled": false
         },
+        "LineLength": {
+            "enabled": false
+        },
         "MethodReturnTypeRequired": {
+            "enabled": false
+        },
+        "MethodSize": {
             "enabled": false
         },
         "NoDef": {
