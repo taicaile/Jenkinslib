@@ -32,11 +32,11 @@ node {
         myLocalLib.myFunction()
         // echo myLocalLib.readYamlFile('config.yaml')
 
-        def config = readYaml(file: 'config.yaml')
-        echo config.toString()
-        echo 'Config keys:'
+        def config = readYaml(file: 'ci_proj_config.yaml')
+        logger.info(config)
+        logger.info('Config keys:')
         config.each { key ->
-            echo "- $key, type: " + key.getClass().getName()
+            logger.info("- $key, type: " + key.getClass().getName())
         }
     }
 
