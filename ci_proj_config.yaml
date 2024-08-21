@@ -8,7 +8,7 @@ timeout: 60
 
 steps:
   - StepName: BuildStage
-    workspace:
+    Workspace:
     BuildCommand: "build"
     BuildCommandType: bat
     BuildDirectory:
