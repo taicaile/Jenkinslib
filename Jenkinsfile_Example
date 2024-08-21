@@ -29,6 +29,7 @@ node {
     stage('LoadConfigFile') {
         def config = readYaml(file: 'ci_proj_config.yaml')
         logger.info(config)
+        entry(config)
         // print key
         config.each { key ->
             logger.info("- $key, type: " + key.getClass().getName())
