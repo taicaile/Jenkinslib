@@ -1,8 +1,14 @@
 config:
   ProjectName: ProjectNameExample
 
+environment:
+
+# timeout parameters, in minutes
+timeout: 60
+
 steps:
   - StepName: BuildStage
+    workspace:
     BuildCommand: "build"
     BuildCommandType: bat
     BuildDirectory:

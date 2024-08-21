@@ -1,5 +1,3 @@
-package core
-
 def run(String command, String directory = null) {
     logger.debug 'command: ' + command + ';' + 'directory: ' + directory
     String results
@@ -7,13 +5,13 @@ def run(String command, String directory = null) {
         if (directory != null) {
             if (fileExists(directory)) {
                 dir(directory) {
-                    results = cmd(command)
+                    results = runCommand(command)
                 }
             }
         }
         else {
             logger.debug("Directory: ${directory} is not set.")
-            results = cmd(command)
+            results = runCommand(command)
         }
         logger.info(results)
     }
