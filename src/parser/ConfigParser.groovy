@@ -1,3 +1,5 @@
+package parser
+
 class ConfigParser {
 
     // private static String latestString = 'latest'
