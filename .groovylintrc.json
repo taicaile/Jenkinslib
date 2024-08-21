@@ -1,6 +1,9 @@
 {
     "extends": "recommended",
     "rules": {
+        "ClassJavadoc": {
+            "enabled": false
+        },
         "CompileStatic": {
             "enabled": false
         },
