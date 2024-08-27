@@ -1,5 +1,4 @@
-config:
-  ProjectName: ProjectNameExample
+projectname: ProjectNameExample
 
 environment:
 
